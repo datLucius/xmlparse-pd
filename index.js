@@ -48,7 +48,7 @@ if (!content) {
 xmlStructure.library.content = contentCollection;
 xmlStructure.library.xmlns = xmlns;
 
-var parsedXml = parser.toXml(JSON.stringify(xmlStructure));
+var parsedXml = parser.toXml(JSON.stringify(xmlStructure), { sanitize: true });
 parsedXml = headtag + parsedXml;
 
 fs.writeFile(__dirname + writePath, parsedXml, function (err) {
