@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/datLucius/xmlparse-pd/issues"
   },
-  "homepage": "https://github.com/datLucius/xmlparse-pd#readme"
+  "homepage": "https://github.com/datLucius/xmlparse-pd#readme",
+  "dependencies": {
+    "xml2json": "^0.12.0"
+  }
 }

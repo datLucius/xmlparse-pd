@@ -18,3 +18,6 @@ This node script accepts three parameters
 3. Write path, ie. where you want the parsed XML
 
 NOTE: the paths are relative to index.js
+
+## Related Package
+This script leverages [xml2json](https://www.npmjs.com/package/xml2json)
