@@ -26,7 +26,7 @@ var collector = function (id) {
     content.forEach(function (el) {
         // grab the content that matches the id passed
         if (el['content-id'] && el['content-id'] === id) {
-            contentCollection.push({ content: el });
+            contentCollection.push(el);
 
             // grab the related children
             if (el['content-links'] && el['content-links']['content-link'] && el['content-links']['content-link'].length) {
@@ -45,11 +45,11 @@ if (!content) {
 } else {
     collector(myArgs[0]);
 }
-xmlStructure.library.xmlns = xmlns;
 xmlStructure.library.content = contentCollection;
+xmlStructure.library.xmlns = xmlns;
 
 var parsedXml = parser.toXml(JSON.stringify(xmlStructure));
-parsedXml = headtag + parsedXml + libtag;
+parsedXml = headtag + parsedXml;
 
 fs.writeFile(__dirname + writePath, parsedXml, function (err) {
     if (err) {
